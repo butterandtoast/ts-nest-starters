@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
 
-  private name: string = 'AJ';
+  private name: string;
   private space = " ";
 
 
@@ -20,6 +20,6 @@ export class AppService {
   }
 
   getName(): string{
-    return this.name;
+    return this.name ?? 'AJ';
   }
 }
