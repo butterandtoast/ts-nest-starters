@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Put } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -8,5 +8,14 @@ export class AppController {
   @Get()
   getHello(): string {
     return this.appService.getHello();
+  }
+
+  getAge(): number{
+    return this.appService.getAge();
+  }
+
+  @Put()
+  setName(name: string) {
+    return this.appService.setName('AJ');
   }
 }
